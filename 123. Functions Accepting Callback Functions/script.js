@@ -1,5 +1,9 @@
 'use strict';
 
+function oneWord(str) {
+  return str.replace(/ /g, '').toLowerCase();
+}
+
 function upperFirstWord(str) {
   const [first, ...others] = str.split(' ');
   return [first.toUpperCase(), ...others].join(' ');
@@ -7,11 +11,11 @@ function upperFirstWord(str) {
 
 function transform(str, fn) {
   console.log(
-    `Từ ban đầu : ${str} \nTừ đã biến đổi : ${fn(
-      str,
-    )} \nCông cụ biến đổi từ : ${fn.name}`,
+    `Từ ban đầu : ${str} \n
+    Từ đã biến đổi : ${fn(str)} \n
+    Công cụ biến đổi từ : ${fn.name}`,
   );
 }
 
 transform('nguyen Khoa Dao', upperFirstWord);
-//console.log(upperFirstWord('nguyen Khoa Dao'));
+transform('nguyen Khoa Dao', oneWord);
